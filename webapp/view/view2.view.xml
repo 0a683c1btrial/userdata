@@ -1,0 +1,27 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" controllerName="cgi.hr.userdata.controller.view2">
+<Page id="page1" title="User data">
+<Button text="Back" press="onNavBack"/> 
+<f:SimpleForm id="sForm">
+    <f:content>
+                <Label text="Id"></Label>
+                <Input id="id"></Input>
+                <Label text="Name"></Label>
+                <Input id="name"></Input>
+                <Label text="Email"></Label>
+                <Input id="email"></Input>
+                <Label text="Mobile"></Label>
+                <Input id="mobile"></Input>
+
+    </f:content>
+</f:SimpleForm>
+<List id="idFactoryList" items="{ path: '/QuestionSet', factory: '.factoryList'}">
+</List>
+<footer>
+    <Toolbar>
+    <ToolbarSpacer></ToolbarSpacer>
+    <Button text="Save" icon="sap-icon://save" press="onSave" type="Accept"/>
+    <Button text="Cancel" icon="sap-icon://cancel" press="onCancel" type="Reject"/>
+    </Toolbar>
+</footer>
+</Page>
+</mvc:View>

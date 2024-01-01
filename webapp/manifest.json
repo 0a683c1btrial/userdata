@@ -1,0 +1,110 @@
+{
+    "_version" : "1.37.0",
+    "sap.app":{
+        "id":"cgi.hr.userdata",
+        "type":"application",
+        "applicationVersion":{
+            "version":"1.0.0"
+        },
+        "ach":"CGI.HR.USERDATA",
+        "dataSources":{
+            "userDataService":{
+                "uri":"/model/userdata.json"
+             }
+
+        }
+},
+"sap.ui":{
+    "fullWidth":"true",
+    "deviceTypes":{
+        "desktop":"true",
+        "tablet":"true",
+        "phone":"true"
+    },
+    "supportedThemes":["sap_fiori_3","sap_fiori_3_dark","sap_horizon"],
+    "technology":"UI5"
+},
+"sap.ui5":{
+    "dependencies":{
+         "minUi5Version":"1.96.0",
+         "libs":{
+             "sap.ui.core":{},
+             "sap.m":{},
+             "sap.viz":{}
+         }
+    },
+    "contentDensities":{"compact":"true","cozy":"true"},
+    "models":{
+        "":{
+            "type":"sap.ui.model.json.JSONModel",
+            "dataSource":"userDataService",
+            "settings":{
+                
+            }
+        },
+        "i18n":{
+            "type":"sap.ui.model.resource.ResourceModel",
+            "settings":{
+                "bundleUrl":"i18n/i18n.properties"
+            },
+            "preload":"true"
+        }
+    },
+    "resources": {
+        "css": [
+            {
+               "uri" : "css/style.css"
+            }
+        ]
+    },
+    "rootView":{
+        "viewName":"cgi.hr.userdata.view.App",
+        "type": "XML",
+        "id":"idApp"
+    },
+    "routing":{
+        "config":{
+            "routerClass":"sap.m.routing.Router",
+            "viewPath": "cgi.hr.userdata.view",
+            "controlId":"idApp",
+            "viewType":"XML"
+        },
+        "routes":[
+            {
+                "name": "userdata",
+                "pattern":"",
+                "target": "form"
+            },
+            {
+                "name":"userdatacr",
+                "pattern":"userdatacreate",
+                "target":"crform"
+            },
+            {
+                "name":"userdataupd",
+                "pattern":"UserSet/{ind}",
+                "target":"updform"
+            }
+        ],
+        "targets":{
+        "form": {
+                "viewName":"view1",
+                "viewId":"idV1",
+                 "controlAggregation":"pages"
+                },
+        "crform":{
+                "viewName":"view2",
+                "viewId":"idV2",
+                "controlAggregation":"pages"    
+                },
+        "updform":{
+                "viewName":"view3",
+                "viewId":"idV3",
+                "controlAggregation":"pages"    
+                }        
+
+        }
+
+    } 
+}
+}

@@ -1,0 +1,60 @@
+{
+    "UserSet" : [
+    {
+        "id": "105846",
+        "name": "Madhavi",
+        "email": "madhaviannam@gmail.com",
+        "mobile": "8880568995",
+        "score" : 1,
+        "editable"  : false
+    },
+    {
+        "id": "111222",
+        "name": "Kiran",
+        "email": "kiran475@gmail.com",
+        "mobile": "9916222975",
+        "score" : 2,
+        "editable"  : false
+    },
+    {
+        "id": "155834",
+        "name": "Taruni",
+        "email": "taruni123@gmail.com",
+        "mobile": "1234567890",
+        "score" : 3,
+        "editable"  : false
+    },
+    {
+        "id": "112345",
+        "name": "Pranavi",
+        "email": "pranu475@gmail.com",
+        "mobile": "8881568995",
+        "score" : 4,
+        "editable"  : false
+    }  
+    ],
+    "employees": [
+        {
+          "empName" :  "Madhavi",
+          "empAddress" : "B.T.M. Layout",
+          "empMobile" : "8880568995"
+         
+        },
+        {
+            "empName" :  "Neelima",
+            "empAddress" : "B.T.M. Layout",
+            "empMobile" : "9916222975"
+           
+          },
+        {
+            "empName" :  "Taruni",
+            "empAddress" : "B.T.M. Layout",
+            "empMobile" : "8970568995" 
+           
+           }
+    ],
+ 
+    "aRows":[]
+
+
+}

@@ -1,0 +1,20 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" controllerName="cgi.hr.userdata.controller.view3">
+  <f:SimpleForm id="sForm">
+    <f:content>
+                <Label text="Id"></Label>
+                <Input id="id" value="{id}"></Input>
+                <Label text="Name"></Label>
+                <Input id="name" value="{name}"></Input>
+                <Label text="Email"></Label>
+                <Input id="email" value="{email}"></Input>
+                <Label text="Mobile"></Label>
+                <Input id="mobile" value="{mobile}"></Input>
+
+    </f:content>
+</f:SimpleForm>
+<Toolbar>
+    <ToolbarSpacer></ToolbarSpacer>
+    <Button text="Save" icon="sap-icon://save" press="onSave" type="Accept"/>
+    <Button text="Cancel" icon="sap-icon://cancel" press="onCancel" type="Reject"/>
+</Toolbar>
+</mvc:View>

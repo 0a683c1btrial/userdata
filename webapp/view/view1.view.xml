@@ -1,0 +1,265 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="cgi.hr.userdata.controller.view1"
+>
+    <Button
+        id="create"
+        text="Add"
+        press="onCreate"
+        visible="{= ${editableModel>/add} === true ? true : false }"
+    />
+    <Button
+        id="update"
+        text="Update"
+        press="onUpdate"
+        visible="{= ${editableModel>/edit} === true ? true : false }"
+    />
+    <Button
+        id="save"
+        text="Save"
+        press="onSave"
+        visible ="{= ${editableModel>/editable} === true ? true : false }"
+    />
+    <Button
+        id="Delete"
+        text="Delete"
+        press="onDelete"
+        visible ="{= ${editableModel>/delete} === true ? true : false }"
+    />
+        <Button
+        id="Totalscore"
+        text="TotalScore"
+        press="onTotalScore"
+        
+    />
+      <Button
+        id="NextScreen"
+        text="NextScreen"
+        press="onNextScreen"
+        
+    />
+    <Table
+        id="userData"
+        items="{/UserSet}"
+        growing="true"
+        mode="MultiSelect"
+        selectionChange="userSelectionChange"
+    >
+        <ColumnListItem>
+            <cells>
+                <HBox>
+                <Text text="{id}" visible="{= ${editable} === true ? false : true }"/>
+                <Input
+                    id="id"
+                    value="{id}"
+                    visible="{= ${editable} === true ? true : false }"
+                />
+                </HBox>
+                <HBox>
+                <Text text="{name}" visible="{= ${editable} === true ? false : true }"/>
+                <Input
+                    id="name" 
+                    value="{name}"
+                    visible="{= ${editable} === true ? true : false }"
+                />
+                </HBox>
+                <HBox>
+                <Text text="{email}" visible="{= ${editable} === true ? false : true }"/>
+                <Input
+                    id="email"
+                    value="{email}"
+                    visible="{= ${editable} === true ? true : false }"
+                />
+                </HBox>
+                <HBox>
+                <Text text="{mobile}" visible="{= ${editable} === true ? false : true }"/>
+                <Input
+                    id="mobile"
+                    value="{mobile}"
+                    visible="{= ${editable} === true ? true : false }"
+                />
+                </HBox>
+                <HBox>
+                <Text text="{ path:'score', formatter: '.formatter.status' }" visible="{= ${editable} === true ? false : true }"/>
+                <Input
+                    id="score"
+                    value="{
+                            path: 'score',
+                            formatter:'.formatter.status'
+                                }"
+                    visible="{= ${editable} === true ? true : false }"
+                />
+                </HBox>
+
+            </cells>
+        </ColumnListItem>
+        <columns>
+            <Column>
+                <Label text="Id" />
+            </Column>
+            <Column>
+                <Label text="Name" />
+            </Column>
+            <Column>
+                <Label text="Email" />
+            </Column>
+            <Column>
+                <Label text="Mobile" />
+            </Column>
+            <Column>
+                <Label text="Score" />
+            </Column>
+        </columns>
+    </Table>
+    <!-- <Table items="{/employees}" select="onEmployeesSelect" growing="true" growingThreshold="10" mode="SingleSelect">
+    <columns>
+        <Column>
+            <Text text ="Employee Name"></Text>
+        </Column>
+        <Column>    
+            <Text text ="Employee Address"></Text>
+        </Column>
+        <Column>    
+            <Text text ="Employee Mobile"></Text>
+        </Column>
+    </columns>
+    <ColumnListItem>
+        <cells>
+            <Text text="{empName}"/>
+            <Text text="{empAddress}"/>
+            <Text text="{empMobile}"/>
+        </cells>
+    </ColumnListItem>    
+    </Table>
+    <f:SimpleForm id="idEmployeeSimpleForm"
+        adjustLabelSpan="true"
+        backgroundDesign="Translucent"
+        breakpointL="1024"
+        breakpointM="600"
+        breakpointXL="1440"
+        columnsL="2"
+        columnsM="1"
+        columnsXL="-1"
+        editable=""
+        emptySpanL="0"
+        emptySpanM="0"
+        emptySpanS="0"
+        emptySpanXL="-1"
+        labelMinWidth="192"
+        labelSpanL="4"
+        labelSpanM="2"
+        labelSpanS="12"
+        labelSpanXL="-1"
+        layout="ResponsiveLayout"
+        maxContainerCols="2"
+        minWidth="-1"
+        singleContainerFullSize="true"
+        width=""
+    >
+        <f:content>
+            <Label text="Employee Name"/>
+            <Input value="{empName}" class="avengers"/>
+            <Label text="Employee Location"/>
+            <Input value="{empAddress}" enabled="{= ${empName} === 'Madhavi' ? false : true}"/>
+            <Label text="Employee Mobile"/>
+            <Input value="{empMobile}"/>
+        </f:content>
+        <f:toolbar>
+        </f:toolbar>
+    </f:SimpleForm>
+     <f:SimpleForm> 
+        <f:content>
+            <Label text="Student Name"/>
+            <Input
+                id="sname"
+                value="{studentModel>/student/sname}"
+            />
+            <Label text="Student Marks"/>
+            <Input
+                id="smarks"
+                value="{studentModel>/student/smarks}"
+            />
+            <Label text="Student id"/>
+            <Input
+                id="sid"
+                value="{studentModel>/student/sid}"
+            />
+            <Label text="Student class"/>
+            <Input
+                id="sclass"
+                value="{studentModel>/student/sclass}"
+            />
+            <Label text="Student section"/>
+            <Input
+                id="ssection"
+                value="{studentModel>/student/ssection}"
+            />
+            <Label text="studentMarks English"/>
+            <Input
+                id="senglish"
+                value="{studentModel>/student/studentMarks/english}"
+            />
+            <Label text="studentMarks Hindi"/>
+            <Input
+                id="shindi"
+                value="{studentModel>/student/studentMarks/hindi}"
+            />
+            <Label text="studentMarks Kannada"/>
+            <Input
+                id="skannada"
+                value="{studentModel>/student/studentMarks/kannada}"
+            />
+        </f:content>
+    </f:SimpleForm>
+    <Table items="{studenttableModel>/studentDetails}">
+        <columns>
+            <Column>
+                <Text text="student Name"/>
+            </Column>
+            <Column>
+                <Text text="student marks"/>
+            </Column>
+            <Column>
+                <Text text="student sid"/>
+            </Column>
+            <Column>
+                <Text text="student class"/>
+            </Column>
+            <Column>
+                <Text text="student section"/>
+            </Column>
+        </columns>
+        <ColumnListItem>
+            <cells>
+                <Text class="myClassCSS" text="{studenttableModel>sname}"/>
+                <Text text="{studenttableModel>smarks}"/>
+                <Text text="{studenttableModel>sid}"/>
+                <Text text="{studenttableModel>sclass}"/>
+                <Text text="{studenttableModel>ssection}"/>
+            </cells>
+        </ColumnListItem>
+    </Table>
+     
+    <Toolbar>
+        <content>
+        <Button
+        id="Create"
+        type="Emphasized"
+        icon="sap-icon://sap-ui5"
+        text="create"
+        press="onCreateStudent"
+        class="sapUiSmallMargin"
+    />
+    <Button
+        id="Update"
+        type="Emphasized"
+        icon="sap-icon://sap-ui5"
+        text="Update"
+        press="onUpdateStudent"
+        class="sapUiSmallMargin"
+    />
+        </content>
+    </Toolbar> -->
+    </mvc:View>
