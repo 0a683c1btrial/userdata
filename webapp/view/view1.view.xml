@@ -6,7 +6,7 @@
 >
     <Button
         id="create"
-        text="Add two"
+        text="Add three"
         press="onCreate"
         visible="{= ${editableModel>/add} === true ? true : false }"
     />
